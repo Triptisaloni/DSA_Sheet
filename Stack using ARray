@@ -1,0 +1,62 @@
+class MyStack 
+{
+    int size;
+    int[] arr;
+    int top;
+    
+    public MyStack(int size)
+    {
+        this.size =size;
+        arr = new int[size];
+        top = -1;
+    }
+    
+    public void push(int x)
+    {
+        top++;
+        if(top>size)
+            return;
+        arr[top]  = x;
+        
+    }
+    
+    public int pop()
+    {
+        if(top==-1)
+            return -1;
+        return arr[top--];
+    }
+    
+    public boolean isEmpty()
+    {
+        return(top==-1);
+    }
+    
+    public int peek()
+    {
+        if(top==-1)
+            return -1;
+        return arr[top];
+    }
+}
+public class Main {
+    public static void main(String[] args) 
+    {
+        MyStack theStack = new MyStack(10); 
+      theStack.push(10);
+      theStack.push(20);
+      theStack.push(30);
+      theStack.push(40);
+      theStack.push(50);
+      
+      while (!theStack.isEmpty()) {
+        int value = theStack.peek();
+          theStack.pop();
+         System.out.print(value);
+         System.out.print(" ");
+      }
+         // ;
+         System.out.print(theStack.pop());
+      // System.out.println("");
+    }
+}
